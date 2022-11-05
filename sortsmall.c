@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:26:21 by plau              #+#    #+#             */
-/*   Updated: 2022/09/05 19:56:54 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/05 18:56:33 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@
 *	Only stack A, no stack B
 */
 
-int		sort_small(t_struct	*stack)
-{
-	if (stack->len_a <=3)
-		sort_three(stack);
-	else if (stack->len_a <= 5)
-		sort_five(stack);
-	return (0);
-}
+// int		sort_small(t_struct	*stack)
+// {
+// 	if (stack->len_a <=3)
+// 		sort_three(stack);
+// 	else if (stack->len_a <= 5)
+// 		sort_five(stack);
+// 	return (0);
+// }
 
-void	sort_three(t_struct *stack)
-{
-	int	*sorted_stack;
-	int	mp;
+// void	sort_three(t_struct *stack)
+// {
+// 	int	*sorted_stack;
+// 	int	mp;
 
 	
-}
+// }
 
-void	sort_five(t_struct	*stack)
-{
+// void	sort_five(t_struct	*stack)
+// {
 	
-}
+// }

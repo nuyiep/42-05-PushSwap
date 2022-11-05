@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operators_utils.c                                  :+:      :+:    :+:   */
+/*   ps_error_checks.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 16:48:54 by plau              #+#    #+#             */
-/*   Updated: 2022/09/03 18:53:08 by plau             ###   ########.fr       */
+/*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
+/*   Updated: 2022/11/05 19:34:13 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
- * Returns the final element of a list
- */ 
-t_struct	*return_last(t_struct *node)
-{
-	while (node && node->next)
-		node = node->next;
-	return (node);
-}
+// void 	check_duplicate(t_data *data)
+// {
+	
+// }
 
+void	error_checks(char **av, t_data *data)
+{
+	check_not_integer(av);
+	// integer_count(av, data);
+	// make_int_array(av, data);
+	// check_duplicate(data);	
+}
