@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:37:09 by plau              #+#    #+#             */
-/*   Updated: 2022/11/05 19:13:10 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/06 19:55:47 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,15 @@ void	check_not_integer(char **av)
 	}
 }
 
-// /* Count integer (why though) */
-// void	integer_count(char **av, t_data *data)
-// {
-// 		int index;
-// 		int i;
+/* Error checking: arguments bigger than an integer */
+void	check_arg_bigger_than_int(char *str)
+{
+	char	*dup;
+	int		i;
+	
+	dup = str;
+	i = 0;
+	if (dup[i] == '+' || dup[i] == '-')
+		i++;
+}
 
-// 		index = 1;
-// 		while (av[index] != NULL)
-// 		{
-// 			i = -1;
-// 			data->str = ft_split(av[index], ' ');
-// 			while (data->str[i] != NULL)
-// 				data
-// 		}
-// }
