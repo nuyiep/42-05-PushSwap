@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/09 16:04:30 by plau             ###   ########.fr       */
+/*   Created: 2022/11/08 21:45:18 by plau              #+#    #+#             */
+/*   Updated: 2022/11/09 15:54:44 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include "push_swap.h"
-
-
-
-int main(int ac, char **av)
+int ft_isspace(char c)
 {
-	t_psinfo	*psinfo;
-	
-	if (ac > 1)
-	{
-		psinfo = malloc(sizeof(t_psinfo));
-		get_data(psinfo, av);
-	}
+	if (c == '\t' || c == '\n' || c == '\v'
+		||	c == '\f' || c== '\r' || c == ' ')
+		return (1);
 	else
-		printf("No parameters are specified.");
+		return (0);
 }
 
+// int main(void)
+// {
+// 	printf("%d\n", ft_isspace('o'));
+// }

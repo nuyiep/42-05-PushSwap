@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/05 19:33:58 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/08 19:39:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,17 @@
 #include "libft/srcs/libft.h"
 #include <stdio.h>
 
-typedef struct s_dlist
+typedef struct s_psinfo
 {
-	int					content;
-	struct s_dlist		*previous;
-	struct s_dlist		*next;
-}   t_dlist;
-
-typedef struct s_data
-{
-	t_dlist *a;
-	t_dlist *b;
-
-	int		total_int;
-	char	**str;
-	int		*i;
-} 	t_data;
-
-/* ************************************************************************** */
-/*                                MANDATORY                                   */
-/* ************************************************************************** */
+	int	len_a;
+	int	len_b;
+	int	total_len;
+	int	mp;
+	int	*stack_a;
+	int	*stack_b;
+}	t_psinfo;
 
 /* error checking */
-
-void	error_checks(char **av, t_data *data);
 void	check_not_integer(char **av);
-
-/* --- sort_three.c --- */
 
 #endif

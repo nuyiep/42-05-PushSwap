@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 21:22:00 by plau              #+#    #+#              #
-#    Updated: 2022/09/05 18:54:45 by plau             ###   ########.fr        #
+#    Updated: 2022/11/08 21:50:49 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC_FILES		= 	ft_isalpha \
 					ft_strtrim \
 					ft_split \
 					ft_itoa \
+					ft_isspace \
 					ft_strmapi \
 					ft_striteri \
 					ft_putchar_fd \

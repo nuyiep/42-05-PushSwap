@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_getter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/09 16:04:30 by plau             ###   ########.fr       */
+/*   Created: 2022/11/12 19:25:43 by plau              #+#    #+#             */
+/*   Updated: 2022/11/12 19:34:48 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-
-
-int main(int ac, char **av)
+/* Check whether array is sorted */
+int check_if_sorted(int *array, int len)
 {
-	t_psinfo	*psinfo;
-	
-	if (ac > 1)
+	int i;
+
+	i = 0;
+	while (i < len)
 	{
-		psinfo = malloc(sizeof(t_psinfo));
-		get_data(psinfo, av);
+		if (array[i] > array[i + 1])
+			return (0);
+		i++;
 	}
-	else
-		printf("No parameters are specified.");
+	return (1);
 }
 
