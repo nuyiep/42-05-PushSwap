@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/08 19:39:56 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/13 18:57:54 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 #include "libft/srcs/libft.h"
 #include <stdio.h>
 
-typedef struct s_psinfo
+typedef struct s_stack
 {
-	int	len_a;
-	int	len_b;
-	int	total_len;
-	int	mp;
-	int	*stack_a;
-	int	*stack_b;
-}	t_psinfo;
+	int *arr;
+	int top;
+}	t_stack;
 
-/* error checking */
-void	check_not_integer(char **av);
+/* quick sort function */
+void swap(int *x, int *y);
+int partition(int array[], int low, int high);
+void quicksort_recursion(int array[], int low, int high);
+void quicksort(int array[], int length);
+
+/* Operators */
+
 
 #endif
