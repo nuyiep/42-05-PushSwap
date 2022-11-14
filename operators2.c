@@ -6,30 +6,42 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 20:22:30 by plau              #+#    #+#             */
-/*   Updated: 2022/11/13 21:01:15 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/14 13:10:28 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Shift up all elements of stack a by 1 */
+/* The first element becomes the last one */
 void	ra(t_stack *stack_a)
 {
-	stack_a->top++;
-	while (stack_a->arr[stack_a->top - 1] != NULL)
+	int len;
+
+	len = stack_a->top;
+	if (stack_a->top < 1)
+		return ;
+	while (len > 0)
 	{
-		swap(&(stack_a->arr[stack_a->top]), stack_a->arr[stack_a->top - 1]);
-		stack_a->top--;
+		swap(&stack_a->arr[len], &stack_a->arr[len - 1]);
+		len--;
 	}
 	ft_putstr_fd("ra\n", 1);	 
 }
 
+/* Shift up all elements of stack b by 1 */
+/* The first element becomes the last one */
 void	rb(t_stack *stack_b)
 {
-	stack_b->top++;
-	while (stack_b->arr[stack_b->top - 1] != NULL)
+	int len;
+
+	len = stack_b->top;
+	if (stack_b->top < 1)
+		return ;
+	while (len > 0)
 	{
-		swap(&(stack_b->arr[stack_b->top]), stack_b->arr[stack_b->top - 1]);
-		stack_b->top--;
+		swap(&stack_b->arr[len], &stack_b->arr[len - 1]);
+		len--;
 	}
 	ft_putstr_fd("rb\n", 1);	 
 }

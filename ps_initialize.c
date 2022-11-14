@@ -29,8 +29,6 @@ void get_stack_a(int ac, char **av, t_stack **stack_a)
 	}
 }
 
-
-
 /* Calculate the number of input */
 // "    123    1  -1 +2"
 static void get_input(t_psinfo *psinfo, char **av)

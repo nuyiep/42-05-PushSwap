@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
-/*   Updated: 2022/11/13 17:56:35 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/14 15:48:34 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	error_checks(char *str)
 	if (check_not_integer == 1 || check_arg_bigger_than_int == 1
 		|| is_duplicate == 1 || is_number == 1 )
 		printf("Error\n");
-	
 }
 
 /* 1. Arguments that are not integers - error return 1 */
