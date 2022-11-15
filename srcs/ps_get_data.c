@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_pushswap.c                                      :+:      :+:    :+:   */
+/*   ps_get_data.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/15 21:32:00 by plau             ###   ########.fr       */
+/*   Created: 2022/11/15 19:50:19 by plau              #+#    #+#             */
+/*   Updated: 2022/11/15 21:48:41 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_ps(t_ps *ps)
+void	get_data(t_ps *ps, char **av)
 {
-	ps->len_a = 0;
-	ps->len_b = 0;
-	ps->max = 0;
-}
+	int	i;
 
-int	main(int ac, char **av)
-{
-	t_ps	ps;
-
-	init_ps(&ps);
-	if (error_checking(&ps, ac, av))
-		return (printf("Error\n"));
-	get_data(&ps, av);
-	print_stack(&ps);
-	system("leaks -q push_swap");
-	return (0);
+	ps->a = ft_calloc(ps->max, sizeof(int));
+	ps->b = ft_calloc(ps->max, sizeof(int));
+	i = 0;
+	while (i < ps->max)
+	{
+		ps->a[i] = ft_atoi(av[i + 1]);
+		i++;
+	}
 }

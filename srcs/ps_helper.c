@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_pushswap.c                                      :+:      :+:    :+:   */
+/*   ps_helper.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/15 21:32:00 by plau             ###   ########.fr       */
+/*   Created: 2022/11/15 21:24:43 by plau              #+#    #+#             */
+/*   Updated: 2022/11/15 21:48:59 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_ps(t_ps *ps)
+void	print_stack(t_ps *ps)
 {
-	ps->len_a = 0;
-	ps->len_b = 0;
-	ps->max = 0;
-}
+	int	index;
 
-int	main(int ac, char **av)
-{
-	t_ps	ps;
-
-	init_ps(&ps);
-	if (error_checking(&ps, ac, av))
-		return (printf("Error\n"));
-	get_data(&ps, av);
-	print_stack(&ps);
-	system("leaks -q push_swap");
-	return (0);
+	index = 0;
+	printf("\nIndex\t|    Stack A\t|    Stack B\n");
+	printf("--------|---------------|---------------\n");
+	while (index < ps->len_a)
+	{
+		printf("   %d\t|\t%d\t|", index, ps->a[index]);
+		if (index < ps->len_b)
+			printf("\t%d", ps->b[index]);
+		printf("\n");
+		index++;
+	}
+	printf("\n");
 }

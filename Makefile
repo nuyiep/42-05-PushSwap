@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/15 19:43:20 by plau             ###   ########.fr        #
+#    Updated: 2022/11/15 21:32:39 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ LIBFT		=	libft.a
 CC			=	gcc
 RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
-SRCS_FILES	=	ps_pushswap \
+SRCS_FILES	=	ps_helper \
+				ps_pushswap \
+				ps_get_data \
 				ps_error_checks
 BONUS_FILES	=	checker_main_bonus \
 				checker_getters_bonus \

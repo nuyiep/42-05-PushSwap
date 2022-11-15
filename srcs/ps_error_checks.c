@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
-/*   Updated: 2022/11/15 19:33:12 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/15 21:18:43 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_not_integer(char **av)
 }
 
 /* 3. Remove duplicate - if is duplicate- Error- return 1 */
-int	is_duplicate(char **av)
+int	is_duplicate(t_ps *ps, char **av)
 {
 	int	i;
 	int	j;
@@ -70,6 +70,8 @@ int	is_duplicate(char **av)
 		}
 		i++;
 	}
+	ps->len_a = j - 1;
+	ps->max = ps->len_a;
 	return (0);
 }
 
@@ -88,14 +90,13 @@ int	is_number(char *str)
 	return (1);
 }
 
-int	error_checking(int ac, char **av)
+int	error_checking(t_ps *ps, int ac, char **av)
 {
 	if (ac < 2)
 		return (1);
 	if (check_not_integer(av))
 		return (1);
-	if (is_duplicate(av))
+	if (is_duplicate(ps, av))
 		return (1);
 	return (0);
-	(void)ac;
 }
