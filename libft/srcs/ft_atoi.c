@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 19:16:57 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 19:45:49 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/15 18:27:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	is_space(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long			res;
 	long			sign;

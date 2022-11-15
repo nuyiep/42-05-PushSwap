@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 21:22:00 by plau              #+#    #+#              #
-#    Updated: 2022/11/05 19:33:41 by plau             ###   ########.fr        #
+#    Updated: 2022/11/15 18:23:12 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,8 @@ OBJS_DIR	= objs/
 #CFLAGS	= -Wall -Werror -Wextra -I . -fsanitize=address -g3
 LIBFTFLAGS	= -L$(LIBFT_DIR) -lft
 
-SRC_FILES	= push_swap\
-				ps_error_checks\
-				# ps_error_checks_utils\
-				# ps_initialize\
-				# ps_make_int_list\
-				# ps_d_list\
-				# ps_operation_utils\
-				# ps_operations_1\
-				# ps_operations_2\
+SRC_FILES	= ps_pushswap \
+				ps_error_checks \
 
 
 SRCS	= $(addsuffix .c, $(SRC_FILES))
