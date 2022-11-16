@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/15 21:25:26 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/16 21:46:44 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,26 @@ int		partition(int array[], int low, int high);
 void	quicksort_recursion(int array[], int low, int high);
 void	quicksort(int array[], int length);
 
-/* Operators */
+/* Operations */
+void	swap(int *x, int *y);
+void	sa(t_ps *ps, int print);
+void	sb(t_ps *ps, int print);
+void	ss(t_ps *ps, int print);
+void	ra(t_ps *ps, int print);
+void	rb(t_ps *ps, int print);
+void	rra(t_ps *ps, int print);
+void	rrb(t_ps *ps, int print);
+void	pa(t_ps *ps, int print);
+void	pb(t_ps *ps, int print);
 
 /* Error checking */
 int		error_checking(t_ps *ps, int ac, char **av);
 
 /* Get data */
 void	get_data(t_ps *ps, char **av);
+
+/* Sort function */
+void	sort_small(t_ps *ps);
 
 /* Helper */
 void	print_stack(t_ps *ps);

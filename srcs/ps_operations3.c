@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_helper.c                                        :+:      :+:    :+:   */
+/*   ps_operations3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 21:24:43 by plau              #+#    #+#             */
-/*   Updated: 2022/11/16 19:50:59 by plau             ###   ########.fr       */
+/*   Created: 2022/11/16 21:49:46 by plau              #+#    #+#             */
+/*   Updated: 2022/11/16 22:04:34 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_ps *ps)
+void	pb(t_ps *ps, int print)
 {
-	int	index;
+	int	temp;
 
-	index = 0;
-	printf("\nIndex\t|    Stack A\t|    Stack B\n");
-	printf("--------|---------------|---------------\n");
-	while (index < ps->len_a)
-	{
-		printf("   %d\t|\t%d\t|", index, ps->a[index]);
-		if (index < ps->len_b)
-			printf("\t%d", ps->b[index]);
-		printf("\n");
-		index++;
-	}
-	printf("\n");
+	temp = 0;
+	if (ps->len_a < 1)
+		return ;
+	rrb(ps, 0);
+	ps->len_b++;
+	ps->b[ps->len_b - 1] = ps->b[0];
+	ps->b[0] = ps->a[0];
+	ra(ps, 0);
+	ps->a[ps->len_a - 1] = 0;
+	ps->len_a--;
+	if (print)
+		ft_putstr_fd("pb\n", 1);
+}
+
+void	rrr(t_ps *ps, int print)
+{
+	rra(ps, 0);
+	rrb(ps, 0);
+	if (print)
+		ft_putstr_fd("rrr\n", 1);
 }

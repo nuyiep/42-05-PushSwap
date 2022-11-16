@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/15 21:32:39 by plau             ###   ########.fr        #
+#    Updated: 2022/11/16 22:03:58 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,11 @@ CFLAGS		=	-Wall -Wextra -Werror
 SRCS_FILES	=	ps_helper \
 				ps_pushswap \
 				ps_get_data \
-				ps_error_checks
+				ps_error_checks \
+				ps_sortsmall \
+				ps_operations \
+				ps_operations2 \
+				ps_operations3
 BONUS_FILES	=	checker_main_bonus \
 				checker_getters_bonus \
 				checker_getters2_bonus \
