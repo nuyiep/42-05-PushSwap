@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:54 by plau              #+#    #+#             */
-/*   Updated: 2022/11/16 22:03:07 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/17 13:36:45 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,11 @@ void	ss(t_ps *ps, int print)
 /* Take the first element at the top of b and put it at the top of a */
 void	pa(t_ps *ps, int print)
 {
-	int	temp;
-
-	temp = 0;
-	if (ps->len_b < 1)
-		return ;
-	rra(ps, 0);
-	temp = ps->a[0];
-	ps->a[ps->len_a - 1] = ps->a[0];
-	ps->a[0] = ps->b[0];
+	swap(&ps->b[0], &ps->a[ps->len_a]);
 	ps->len_a++;
 	rb(ps, 0);
-	ps->b[ps->len_b - 1] = 0;
 	ps->len_b--;
+	rra(ps, 0);
 	if (print)
 		ft_putstr_fd("pa\n", 1);
 }
