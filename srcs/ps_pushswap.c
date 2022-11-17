@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/17 13:41:36 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/17 21:46:35 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int ac, char **av)
 		return (printf("Error\n"));
 	get_data(&ps, av);
 	sort_small(&ps);
+	print_stack(&ps);
 	system("leaks -q push_swap");
 	return (0);
 }

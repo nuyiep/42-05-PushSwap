@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/16 21:46:44 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/17 21:21:50 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_ps
 }	t_ps;
 
 /* quick sort function */
-void	swap(int *x, int *y);
 int		partition(int array[], int low, int high);
 void	quicksort_recursion(int array[], int low, int high);
 void	quicksort(int array[], int length);
@@ -47,6 +46,7 @@ int		error_checking(t_ps *ps, int ac, char **av);
 
 /* Get data */
 void	get_data(t_ps *ps, char **av);
+int		*get_stack(t_ps *ps, char c);
 
 /* Sort function */
 void	sort_small(t_ps *ps);
