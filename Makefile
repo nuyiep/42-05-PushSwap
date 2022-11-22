@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/17 14:12:37 by plau             ###   ########.fr        #
+#    Updated: 2022/11/22 12:46:15 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS_FILES	=	ps_helper \
 				ps_operations \
 				ps_operations2 \
 				ps_operations3 \
-				ps_quicksort
+				ps_quicksort	\
+				ps_sortbig		
 BONUS_FILES	=	checker_main_bonus \
 				checker_getters_bonus \
 				checker_getters2_bonus \

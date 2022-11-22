@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
-/*   Updated: 2022/11/16 12:37:19 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/22 12:37:39 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,36 @@ int	is_duplicate(t_ps *ps, char **av)
 	ps->len_a = j - 1;
 	ps->max = ps->len_a;
 	return (0);
+}
+
+/* To handle when numbers are in a string */
+/* Turns all input into a string of numbers seperated by spaces */
+char	*numbers_into_string(t_ps *ps, char **av)
+{
+	int		i;
+	char	*temp;
+	char	*temp2;
+	char	*output;
+
+	(void)ps;
+	i = 1;
+	output = malloc(sizeof(char));
+	if (!output)
+		return (NULL);
+	while (av[i] != NULL)
+	{
+		if (av[i][0] == '\0')
+		{
+			free(output);
+			return (NULL);
+		}
+		temp = ft_strjoin(output, av[i]);
+		temp2 = output;
+		output = ft_strjoin(temp, " ");
+		free(temp2);
+		free(temp);
+	}
+	return (output);
 }
 
 /* Main function for error checking */

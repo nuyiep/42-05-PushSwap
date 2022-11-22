@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:19:02 by plau              #+#    #+#             */
-/*   Updated: 2022/11/17 21:57:29 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/18 15:25:31 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	sort_three(t_ps *ps)
 	a = ps->a[0];
 	b = ps->a[1];
 	c = ps->a[2];
-	if (a < b && c < b)
+	if (a < b && b > c && a < c)
 	{
 		rra(ps, 1);
 		sa(ps, 1);
 	}
-	else if (a > b && b < c)
+	else if (a > b && b < c && a < c)
 		sa(ps, 1);
-	else if (a < b && b > c)
+	else if (a < b && b > c && a > c)
 		rra(ps, 1);
-	else if (a > b && b < c)
+	else if (a > b && b < c && a > c)
 		ra(ps, 1);
-	else if (a > b && b > c)
+	else if (a > b && b > c && a > c)
 	{
 		sa(ps, 1);
 		rra(ps, 1);
@@ -79,7 +79,9 @@ void	sort_five(t_ps *ps)
 
 void	sort_small(t_ps *ps)
 {
-	if (ps->len_a == 2)
+	if (ps->len_a < 2)
+		return ;
+	else if (ps->len_a == 2)
 		sort_two(ps);
 	else if (ps->len_a == 3)
 		sort_three(ps);

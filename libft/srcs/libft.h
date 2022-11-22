@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 15:22:23 by plau              #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:03 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/18 11:38:26 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int			ft_isspace(char c);
+void		ft_swap(int *x, int *y);
 
 #endif

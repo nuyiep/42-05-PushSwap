@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:08:25 by plau              #+#    #+#             */
-/*   Updated: 2022/11/17 21:56:51 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/18 16:07:34 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ int	partition(int array[], int low, int high)
 	int	pivot_value;
 	int	i;
 	int	j;
-	int	pivot_index;
 
-	pivot_index = low + (rand() % (high - low));
-	if (pivot_index != high)
-		swap(&array[pivot_index], &array[high]);
 	pivot_value = array[high];
 	i = low;
 	j = low;
@@ -29,17 +25,15 @@ int	partition(int array[], int low, int high)
 	{
 		if (array[j] <= pivot_value)
 		{
-			swap(&array[i], &array[j]);
+			ft_swap(&array[i], &array[j]);
 			i++;
 		}
 		j++;
 	}
-	swap(&array[i], &array[high]);
+	ft_swap(&array[i], &array[high]);
 	return (i);
 }
 
-/* 0 - first index   				*/
-/* high - last index 				*/
 void	quicksort_recursion(int array[], int low, int high)
 {
 	int	pivot_index;

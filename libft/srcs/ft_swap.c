@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_operations3.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 21:49:46 by plau              #+#    #+#             */
-/*   Updated: 2022/11/18 11:41:20 by plau             ###   ########.fr       */
+/*   Created: 2022/11/18 11:37:36 by plau              #+#    #+#             */
+/*   Updated: 2022/11/18 11:39:15 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-/* Take the first element at the top of a and put it at the top of b */
-void	pb(t_ps *ps, int print)
+void	ft_swap(int *x, int *y)
 {
-	ft_swap(&ps->a[0], &ps->b[ps->len_b]);
-	ps->len_b++;
-	ra(ps, 0);
-	ps->len_a--;
-	rrb(ps, 0);
-	if (print)
-		ft_putstr_fd("pb\n", 1);
-}
+	int	temp;
 
-void	rrr(t_ps *ps, int print)
-{
-	rra(ps, 0);
-	rrb(ps, 0);
-	if (print)
-		ft_putstr_fd("rrr\n", 1);
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }

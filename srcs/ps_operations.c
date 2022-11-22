@@ -6,26 +6,17 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:54 by plau              #+#    #+#             */
-/*   Updated: 2022/11/17 14:13:00 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/18 11:40:10 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(int *x, int *y)
-{
-	int	temp;
-
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
 void	sa(t_ps *ps, int print)
 {
 	if (ps->len_a < 2)
 		return ;
-	swap(&(ps->a[0]), &(ps->a[1]));
+	ft_swap(&(ps->a[0]), &(ps->a[1]));
 	if (print)
 		ft_putstr_fd("sa\n", 1);
 }
@@ -34,7 +25,7 @@ void	sb(t_ps *ps, int print)
 {
 	if (ps->len_b < 2)
 		return ;
-	swap(&(ps->b[0]), &(ps->b[1]));
+	ft_swap(&(ps->b[0]), &(ps->b[1]));
 	if (print)
 		ft_putstr_fd("sb\n", 1);
 }
@@ -50,7 +41,7 @@ void	ss(t_ps *ps, int print)
 /* Take the first element at the top of b and put it at the top of a */
 void	pa(t_ps *ps, int print)
 {
-	swap(&ps->b[0], &ps->a[ps->len_a]);
+	ft_swap(&ps->b[0], &ps->a[ps->len_a]);
 	ps->len_a++;
 	rb(ps, 0);
 	ps->len_b--;

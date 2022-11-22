@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 21:22:00 by plau              #+#    #+#              #
-#    Updated: 2022/11/08 21:50:49 by plau             ###   ########.fr        #
+#    Updated: 2022/11/18 11:38:45 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC_FILES		= 	ft_isalpha \
 					ft_numbers \
 					ft_printf \
 					ft_unsigned \
+					ft_swap \
 					get_next_line_bonus \
 					get_next_line_utils_bonus \
 					get_next_line_utils \

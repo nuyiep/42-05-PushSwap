@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/17 21:46:35 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/22 22:29:57 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,18 @@ void	init_ps(t_ps *ps)
 int	main(int ac, char **av)
 {
 	t_ps	ps;
+	int		largest;
+	int		smallest;
 
+	largest = 0;
+	smallest = 0;
 	init_ps(&ps);
 	if (error_checking(&ps, ac, av))
 		return (printf("Error\n"));
 	get_data(&ps, av);
-	sort_small(&ps);
-	print_stack(&ps);
-	system("leaks -q push_swap");
+	if (is_sorted(&ps))
+		return (0);
+	ps_sorthundred(&ps);
+	// system("leaks -q push_swap");
 	return (0);
 }
