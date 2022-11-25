@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/22 22:29:57 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/25 20:39:46 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	main(int ac, char **av)
 	if (is_sorted(&ps))
 		return (0);
 	ps_sorthundred(&ps);
-	// system("leaks -q push_swap");
+	system("leaks -q push_swap");
 	return (0);
 }

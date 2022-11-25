@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:24:43 by plau              #+#    #+#             */
-/*   Updated: 2022/11/22 19:06:36 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/25 20:39:31 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,31 @@ int	is_sorted(t_ps *ps)
 		i++;
 	}
 	return (1);
+}
+
+void	change_to_index(t_ps *ps)
+{
+	int	*sorted_stack;
+	int	i;
+	int	j;
+
+	i = 0;
+	sorted_stack = get_stack(ps, 'A');
+	quicksort(sorted_stack, ps->len_a);
+	while (i < ps->len_a)
+	{
+		j = 0;
+		while (j < ps->len_a && i < ps->len_a)
+		{
+			if (ps->a[j] != sorted_stack[i])
+				j++;
+			else if (ps->a[j] == sorted_stack[i])
+			{
+				ps->a[j] = i;
+				i++;
+				j++;
+			}
+		}
+	}
+	free(sorted_stack);
 }

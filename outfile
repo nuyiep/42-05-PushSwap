@@ -1,46 +1,1757 @@
-rra
-pb
-ra
-pb
-pb
-ra
-pb
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-pb
-ra
-pb
-pa
-rb
-rb
-pa
-rrb
-pa
-rrb
-pa
-rb
-pa
-rrb
-pa
-pa
-pa
-pa
 
 Index	|    Stack A	|    Stack B
 --------|---------------|---------------
-   0	|	1	|
-   1	|	2	|
-   2	|	3	|
-   3	|	4	|
-   4	|	5	|
-   5	|	6	|
-   6	|	7	|
-   7	|	8	|
-   8	|	9	|
-   9	|	10	|
+   0	|	111	|
+   1	|	487	|
+   2	|	212	|
+   3	|	253	|
+   4	|	17	|
+   5	|	174	|
+   6	|	385	|
+   7	|	445	|
+   8	|	427	|
+   9	|	455	|
+   10	|	70	|
+   11	|	4	|
+   12	|	150	|
+   13	|	112	|
+   14	|	383	|
+   15	|	15	|
+   16	|	348	|
+   17	|	176	|
+   18	|	156	|
+   19	|	366	|
+   20	|	257	|
+   21	|	350	|
+   22	|	400	|
+   23	|	408	|
+   24	|	115	|
+   25	|	5	|
+   26	|	307	|
+   27	|	412	|
+   28	|	246	|
+   29	|	74	|
+   30	|	48	|
+   31	|	86	|
+   32	|	147	|
+   33	|	43	|
+   34	|	476	|
+   35	|	353	|
+   36	|	421	|
+   37	|	77	|
+   38	|	328	|
+   39	|	403	|
+   40	|	374	|
+   41	|	494	|
+   42	|	242	|
+   43	|	179	|
+   44	|	414	|
+   45	|	146	|
+   46	|	271	|
+   47	|	488	|
+   48	|	33	|
+   49	|	377	|
+   50	|	180	|
+   51	|	436	|
+   52	|	113	|
+   53	|	51	|
+   54	|	492	|
+   55	|	236	|
+   56	|	134	|
+   57	|	316	|
+   58	|	371	|
+   59	|	230	|
+   60	|	441	|
+   61	|	260	|
+   62	|	231	|
+   63	|	428	|
+   64	|	190	|
+   65	|	2	|
+   66	|	10	|
+   67	|	209	|
+   68	|	172	|
+   69	|	305	|
+   70	|	440	|
+   71	|	244	|
+   72	|	397	|
+   73	|	382	|
+   74	|	496	|
+   75	|	338	|
+   76	|	228	|
+   77	|	278	|
+   78	|	28	|
+   79	|	19	|
+   80	|	451	|
+   81	|	6	|
+   82	|	395	|
+   83	|	323	|
+   84	|	41	|
+   85	|	381	|
+   86	|	315	|
+   87	|	331	|
+   88	|	456	|
+   89	|	97	|
+   90	|	138	|
+   91	|	161	|
+   92	|	24	|
+   93	|	415	|
+   94	|	419	|
+   95	|	320	|
+   96	|	211	|
+   97	|	196	|
+   98	|	398	|
+   99	|	298	|
+   100	|	352	|
+   101	|	459	|
+   102	|	167	|
+   103	|	302	|
+   104	|	461	|
+   105	|	312	|
+   106	|	243	|
+   107	|	468	|
+   108	|	391	|
+   109	|	14	|
+   110	|	373	|
+   111	|	485	|
+   112	|	251	|
+   113	|	131	|
+   114	|	142	|
+   115	|	194	|
+   116	|	240	|
+   117	|	333	|
+   118	|	416	|
+   119	|	296	|
+   120	|	332	|
+   121	|	434	|
+   122	|	88	|
+   123	|	358	|
+   124	|	469	|
+   125	|	153	|
+   126	|	442	|
+   127	|	267	|
+   128	|	169	|
+   129	|	107	|
+   130	|	389	|
+   131	|	479	|
+   132	|	126	|
+   133	|	235	|
+   134	|	223	|
+   135	|	393	|
+   136	|	90	|
+   137	|	241	|
+   138	|	297	|
+   139	|	454	|
+   140	|	407	|
+   141	|	443	|
+   142	|	1	|
+   143	|	148	|
+   144	|	258	|
+   145	|	18	|
+   146	|	430	|
+   147	|	192	|
+   148	|	269	|
+   149	|	30	|
+   150	|	141	|
+   151	|	9	|
+   152	|	497	|
+   153	|	46	|
+   154	|	475	|
+   155	|	229	|
+   156	|	29	|
+   157	|	34	|
+   158	|	36	|
+   159	|	357	|
+   160	|	218	|
+   161	|	104	|
+   162	|	56	|
+   163	|	322	|
+   164	|	114	|
+   165	|	481	|
+   166	|	460	|
+   167	|	285	|
+   168	|	259	|
+   169	|	72	|
+   170	|	84	|
+   171	|	75	|
+   172	|	420	|
+   173	|	438	|
+   174	|	287	|
+   175	|	498	|
+   176	|	404	|
+   177	|	191	|
+   178	|	248	|
+   179	|	149	|
+   180	|	204	|
+   181	|	54	|
+   182	|	65	|
+   183	|	339	|
+   184	|	325	|
+   185	|	185	|
+   186	|	282	|
+   187	|	129	|
+   188	|	79	|
+   189	|	379	|
+   190	|	405	|
+   191	|	221	|
+   192	|	189	|
+   193	|	178	|
+   194	|	250	|
+   195	|	183	|
+   196	|	422	|
+   197	|	396	|
+   198	|	402	|
+   199	|	106	|
+   200	|	424	|
+   201	|	165	|
+   202	|	467	|
+   203	|	406	|
+   204	|	62	|
+   205	|	158	|
+   206	|	392	|
+   207	|	347	|
+   208	|	0	|
+   209	|	346	|
+   210	|	92	|
+   211	|	59	|
+   212	|	217	|
+   213	|	463	|
+   214	|	144	|
+   215	|	188	|
+   216	|	197	|
+   217	|	219	|
+   218	|	127	|
+   219	|	324	|
+   220	|	431	|
+   221	|	215	|
+   222	|	198	|
+   223	|	343	|
+   224	|	42	|
+   225	|	277	|
+   226	|	91	|
+   227	|	32	|
+   228	|	69	|
+   229	|	295	|
+   230	|	314	|
+   231	|	93	|
+   232	|	276	|
+   233	|	261	|
+   234	|	168	|
+   235	|	337	|
+   236	|	100	|
+   237	|	94	|
+   238	|	140	|
+   239	|	272	|
+   240	|	334	|
+   241	|	446	|
+   242	|	458	|
+   243	|	132	|
+   244	|	38	|
+   245	|	224	|
+   246	|	340	|
+   247	|	268	|
+   248	|	390	|
+   249	|	284	|
+   250	|	399	|
+   251	|	327	|
+   252	|	489	|
+   253	|	418	|
+   254	|	102	|
+   255	|	255	|
+   256	|	318	|
+   257	|	81	|
+   258	|	187	|
+   259	|	335	|
+   260	|	341	|
+   261	|	432	|
+   262	|	351	|
+   263	|	57	|
+   264	|	234	|
+   265	|	493	|
+   266	|	409	|
+   267	|	73	|
+   268	|	447	|
+   269	|	317	|
+   270	|	457	|
+   271	|	275	|
+   272	|	326	|
+   273	|	360	|
+   274	|	283	|
+   275	|	426	|
+   276	|	105	|
+   277	|	483	|
+   278	|	44	|
+   279	pb
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+pb
+ra
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+pb
+rb
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+rb
+pb
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+rb
+ra
+pb
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+pb
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+ra
+pb
+rb
+ra
+ra
+pb
+ra
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+ra
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+rb
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+ra
+ra
+pb
+rb
+pb
+ra
+pb
+rb
+pb
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+ra
+ra
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+pb
+ra
+ra
+pb
+rb
+pb
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+pb
+ra
+ra
+pb
+rb
+ra
+pb
+rb
+pb
+ra
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+rb
+ra
+pb
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+pb
+ra
+ra
+pb
+pb
+ra
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+rb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+rb
+ra
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+ra
+ra
+pb
+rb
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+rb
+ra
+pb
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+|	193	|
+   280	|	119	|
+   281	|	154	|
+   282	|	136	|
+   283	|	477	|
+   284	|	162	|
+   285	|	71	|
+   286	|	254	|
+   287	|	208	|
+   288	|	87	|
+   289	|	232	|
+   290	|	376	|
+   291	|	359	|
+   292	|	313	|
+   293	|	425	|
+   294	|	39	|
+   295	|	453	|
+   296	|	82	|
+   297	|	470	|
+   298	|	95	|
+   299	|	273	|
+   300	|	12	|
+   301	|	45	|
+   302	|	166	|
+   303	|	31	|
+   304	|	120	|
+   305	|	380	|
+   306	|	388	|
+   307	|	362	|
+   308	|	35	|
+   309	|	286	|
+   310	|	499	|
+   311	|	202	|
+   312	|	206	|
+   313	|	186	|
+   314	|	394	|
+   315	|	200	|
+   316	|	342	|
+   317	|	361	|
+   318	|	410	|
+   319	|	68	|
+   320	|	439	|
+   321	|	181	|
+   322	|	216	|
+   323	|	482	|
+   324	|	452	|
+   325	|	89	|
+   326	|	306	|
+   327	|	139	|
+   328	|	155	|
+   329	|	356	|
+   330	|	163	|
+   331	|	473	|
+   332	|	145	|
+   333	|	58	|
+   334	|	462	|
+   335	|	378	|
+   336	|	61	|
+   337	|	55	|
+   338	|	103	|
+   339	|	50	|
+   340	|	63	|
+   341	|	256	|
+   342	|	249	|
+   343	|	233	|
+   344	|	83	|
+   345	|	370	|
+   346	|	160	|
+   347	|	123	|
+   348	|	47	|
+   349	|	413	|
+   350	|	177	|
+   351	|	23	|
+   352	|	401	|
+   353	|	37	|
+   354	|	363	|
+   355	|	225	|
+   356	|	143	|
+   357	|	311	|
+   358	|	8	|
+   359	|	130	|
+   360	|	207	|
+   361	|	64	|
+   362	|	344	|
+   363	|	264	|
+   364	|	3	|
+   365	|	170	|
+   366	|	226	|
+   367	|	157	|
+   368	|	300	|
+   369	|	367	|
+   370	|	85	|
+   371	|	80	|
+   372	|	13	|
+   373	|	151	|
+   374	|	423	|
+   375	|	53	|
+   376	|	265	|
+   377	|	281	|
+   378	|	435	|
+   379	|	27	|
+   380	|	210	|
+   381	|	365	|
+   382	|	364	|
+   383	|	491	|
+   384	|	495	|
+   385	|	220	|
+   386	|	319	|
+   387	|	291	|
+   388	|	384	|
+   389	|	354	|
+   390	|	303	|
+   391	|	433	|
+   392	|	288	|
+   393	|	201	|
+   394	|	336	|
+   395	|	299	|
+   396	|	293	|
+   397	|	247	|
+   398	|	173	|
+   399	|	329	|
+   400	|	304	|
+   401	|	387	|
+   402	|	52	|
+   403	|	429	|
+   404	|	110	|
+   405	|	122	|
+   406	|	239	|
+   407	|	368	|
+   408	|	40	|
+   409	|	474	|
+   410	|	372	|
+   411	|	203	|
+   412	|	472	|
+   413	|	292	|
+   414	|	171	|
+   415	|	471	|
+   416	|	345	|
+   417	|	137	|
+   418	|	175	|
+   419	|	117	|
+   420	|	369	|
+   421	|	308	|
+   422	|	213	|
+   423	|	109	|
+   424	|	21	|
+   425	|	222	|
+   426	|	449	|
+   427	|	108	|
+   428	|	245	|
+   429	|	20	|
+   430	|	411	|
+   431	|	279	|
+   432	|	101	|
+   433	|	159	|
+   434	|	124	|
+   435	|	227	|
+   436	|	182	|
+   437	|	437	|
+   438	|	355	|
+   439	|	76	|
+   440	|	280	|
+   441	|	310	|
+   442	|	484	|
+   443	|	444	|
+   444	|	16	|
+   445	|	486	|
+   446	|	135	|
+   447	|	11	|
+   448	|	294	|
+   449	|	450	|
+   450	|	199	|
+   451	|	386	|
+   452	|	66	|
+   453	|	164	|
+   454	|	321	|
+   455	|	266	|
+   456	|	184	|
+   457	|	118	|
+   458	|	375	|
+   459	|	49	|
+   460	|	466	|
+   461	|	78	|
+   462	|	205	|
+   463	|	274	|
+   464	|	309	|
+   465	|	116	|
+   466	|	263	|
+   467	|	262	|
+   468	|	22	|
+   469	|	448	|
+   470	|	60	|
+   471	|	26	|
+   472	|	490	|
+   473	|	96	|
+   474	|	464	|
+   475	|	289	|
+   476	|	67	|
+   477	|	133	|
+   478	|	270	|
+   479	|	25	|
+   480	|	152	|
+   481	|	478	|
+   482	|	465	|
+   483	|	128	|
+   484	|	99	|
+   485	|	349	|
+   486	|	301	|
+   487	|	252	|
+   488	|	195	|
+   489	|	480	|
+   490	|	238	|
+   491	|	290	|
+   492	|	214	|
+   493	|	330	|
+   494	|	417	|
+   495	|	125	|
+   496	|	121	|
+   497	|	7	|
+   498	|	98	|
+   499	|	237	|
 

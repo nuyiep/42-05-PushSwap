@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/22 20:16:19 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/25 15:27:41 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,30 @@ typedef struct s_ps
 	int	max;
 }	t_ps;
 
-/* quick sort function */
+/* Quick sort function */
 int		partition(int array[], int low, int high);
 void	quicksort_recursion(int array[], int low, int high);
 void	quicksort(int array[], int length);
 
-/* Operations */
+/* Error checking */
+int		error_checking(t_ps *ps, int ac, char **av);
+
+/* Get data */
+void	get_data(t_ps *ps, char **av);
+int		*get_stack(t_ps *ps, char c);
+
+/* Sorting functions len <= 5 */
+void	sort_small(t_ps *ps);
+
+/* Sorting function len > 5 */
+void	push_smaller_than_median(t_ps *ps);
+int		largest_int_stack_b(t_ps *ps);
+int		smallest_int_stack_b(t_ps *ps);
+void	push_larger_than_median(t_ps *ps);
+void	ps_sorthundred(t_ps *ps);
+void	sort_and_push_stack_b(t_ps *ps);
+
+/* Operators */
 void	sa(t_ps *ps, int print);
 void	sb(t_ps *ps, int print);
 void	ss(t_ps *ps, int print);
@@ -42,24 +60,9 @@ void	rrr(t_ps *ps, int print);
 void	pa(t_ps *ps, int print);
 void	pb(t_ps *ps, int print);
 
-/* Error checking */
-int		error_checking(t_ps *ps, int ac, char **av);
-
-/* Get data */
-void	get_data(t_ps *ps, char **av);
-int		*get_stack(t_ps *ps, char c);
-
-/* Sort function */
-void	sort_small(t_ps *ps);
-void	push_smaller_than_median(t_ps *ps);
-int		largest_int_stack_b(t_ps *ps);
-int		smallest_int_stack_b(t_ps *ps);
-void	push_larger_than_median(t_ps *ps);
-void	ps_sorthundred(t_ps *ps);
-void	sort_and_push_stack_b(t_ps *ps);
-
-/* Helper */
+/* Helper function */
 void	print_stack(t_ps *ps);
 int		is_sorted(t_ps *ps);
+void	change_to_index(t_ps *ps);
 
 #endif
