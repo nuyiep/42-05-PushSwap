@@ -6,28 +6,11 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:51:13 by plau              #+#    #+#             */
-/*   Updated: 2022/11/25 20:44:16 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/25 21:50:05 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* [checked] Find chunk number according to sorted stack A's index */
-int	find_chunk_number(t_ps *ps, int chunk_size, int count)
-{
-	int	chunk_number;
-	int	*sorted_stack;
-	int	i;
-
-	chunk_number = 0;
-	i = 1;
-	sorted_stack = get_stack(ps, 'A');
-	quicksort(sorted_stack, ps->len_a);
-	chunk_number = sorted_stack[(ps->len_a) / chunk_size];
-	chunk_number = chunk_number * count;
-	free(sorted_stack);
-	return (chunk_number);
-}
 
 /* Get position of number at stack A */
 int	get_pos(t_ps *ps, int number, char c)
@@ -37,7 +20,7 @@ int	get_pos(t_ps *ps, int number, char c)
 	index = 0;
 	if (c == 'A')
 	{
-		while (1)
+		while (index < ps->len_a)
 		{
 			if (ps->a[index] == number)
 				return (index);
@@ -47,7 +30,7 @@ int	get_pos(t_ps *ps, int number, char c)
 	}
 	if (c == 'B')
 	{
-		while (1)
+		while (index < ps->len_b)
 		{
 			if (ps->b[index] == number)
 				return (index);
@@ -87,13 +70,14 @@ void	ps_push_to_b(t_ps *ps, int chunk_size)
 // ELSE RETURN 0
 int	push_second_largest(t_ps *ps, int pushed_already)
 {
-	if (ps->b[0] == ps->len_b - 2 && pushed_already == 0)
+	if (pushed_already)
+		return (1);
+	else if (ps->b[0] == ps->len_b - 2)
 	{
 		pa(ps, 1);
 		return (1);
 	}
-	else
-		return (0);
+	return (0);
 }
 
 // 1. FIND BIGGEST NUMBER INDEX (get_pos)
@@ -103,17 +87,33 @@ void	ps_push_to_a(t_ps *ps)
 {
 	int	position;
 	int	largest;
+	int	pushed_already;
 
+	pushed_already = 0;
 	while (ps->len_b > 0)
 	{
-		largest = ps->len_b - 1;
+		if (pushed_already == 0)
+			largest = ps->len_b - 1;
 		position = get_pos(ps, largest, 'B');
-		if (position == 0)
+		if (ps->b[0] == largest)
+		{
 			pa(ps, 1);
-		else if (position != 0)
+			if (pushed_already)
+			{
+				if (ps->b[0] < ps->b[1])
+					ss(ps, 1);
+				else
+					sa(ps, 1);
+			}
+			pushed_already = 0;
+		}
+		else
 		{
 			while (ps->b[0] != largest)
 			{
+				pushed_already = push_second_largest(ps, pushed_already);
+				if (ps->b[0] == largest)
+					break ;
 				if (position > ps->len_b / 2)
 					rrb(ps, 1);
 				else if (position <= ps->len_b / 2)
@@ -121,6 +121,7 @@ void	ps_push_to_a(t_ps *ps)
 			}
 		}
 	}
+	return ;
 }
 
 /* Main function */
