@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 18:10:10 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 21:03:41 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 12:59:48 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t					i;
-	unsigned char			*d;
-	unsigned const char		*s;
+	size_t	i;
 
-	d = dst;
-	s = src;
-	i = 0;
-	if (!dst || !src)
-		return (0);
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
+	i = -1;
+	if (dst == src)
+		return (NULL);
+	while (++i < n)
+		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 	return (dst);
 }
-/*
-int main () {
-   const char src[50] = "http://www.tutorialspoint.com";
-   char dest[50];
-   strcpy(dest,"Heloooo!!");
-   printf("Before memcpy dest = %s\n", dest);
-   ft_memcpy(dest, src, 5);
-   // memcpy(dest, src, strlen(src)+1);
-   printf("After memcpy dest = %s\n", dest);
-   
-   return(0);
-}
-*/

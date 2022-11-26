@@ -5,16 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 11:37:36 by plau              #+#    #+#             */
-/*   Updated: 2022/11/18 11:39:15 by plau             ###   ########.fr       */
+/*   Created: 2022/07/20 17:47:13 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *x, int *y)
+#include "libft.h"
+
+void	ft_swap(int *a, int *b)
 {
 	int	temp;
 
-	temp = *x;
-	*x = *y;
-	*y = temp;
+	if (!a || !b)
+		return ;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

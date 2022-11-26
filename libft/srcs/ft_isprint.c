@@ -3,26 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plau <plau@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 16:16:34 by plau              #+#    #+#             */
-/*   Updated: 2022/07/05 17:49:52 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 11:05:24 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	if (c < 32 || c > 126)
-		return (0);
-	return (1);
+	return (c >= 32 && c <= 126);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-	char p = ' ';
-	printf("%d\n", ft_isprint(p));
-	return (0);
-} 
-//<c.type.h>
-*/

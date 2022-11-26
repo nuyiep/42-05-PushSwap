@@ -5,42 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 19:14:23 by plau              #+#    #+#             */
-/*   Updated: 2022/09/05 18:53:38 by plau             ###   ########.fr       */
+/*   Created: 2022/07/07 11:48:56 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h" 
-# include <stdarg.h>   //variadic function
-# include <unistd.h>  //write
-# include <stdlib.h> //malloc
+# include "libft.h"
 
-int		print_integer_base10(int n); //%d, %i
-int		ft_decimal_len(unsigned int n);
+typedef struct s_flags
+{
+	int		num;
+	int		neg;
+	int		zero;
+	int		dot;
+	int		hash;
+	int		spc;
+	int		plus;
+	int		width;
+	int		prec;
+	char	d;
+}	t_flags;
 
-int		ft_putchar(char ch); //%c
-int		ft_puts(const char *s); //%s 
-int		print_percent(void); //%
-
-//%u
-int		ft_unsigned_len(unsigned int n);
-char	*ft_uitoa(unsigned int n);
-int		ft_print_unsigned(unsigned int n);
-
-//%x %X
-int		ft_hexa_len(unsigned int n);
-int		ft_hexa_lower(unsigned int n);
-int		ft_hexa_upper(unsigned int n);
-
-//%p
-int		ft_hexaptr_len(uintptr_t ptr);
-void	ft_print_ptr(uintptr_t ptr);
-int		ft_print_n_returnptr(uintptr_t ptr);
-
-int		ft_formats(va_list args, const char format);
-int		ft_printf(const char *str, ...);
+void	default_flag(t_flags *flags);
+void	get_flags(const char *str, int *i, t_flags *flags);
+void	print_hf(unsigned int n, char *base, t_flags *flags, int *wc);
+void	print_stonf(char *n, t_flags *flags, int *wc);
+void	print_nf(int n, t_flags *flags, int *wc);
+void	print_pf(unsigned long string_addr, t_flags *flags, int *wc);
+int		print_dupe(char c, int count);
+void	print_sf(char *str, t_flags *flags, int *wc);
+void	print_cf(char c, t_flags *flags, int *wc);
+void	print_unf(unsigned int n, t_flags *glags, int *wc);
 
 #endif

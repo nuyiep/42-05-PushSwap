@@ -5,62 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 17:43:09 by plau              #+#    #+#             */
-/*   Updated: 2022/07/09 19:28:55 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 14:28:47 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	intlen(long nb)
-{
-	int	res;
-
-	if (nb == 0)
-		return (1);
-	res = 0;
-	if (nb < 0)
-	{
-		nb = nb * -1;
-		res = res + 1;
-	}
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		res = res + 1;
-	}
-	return (res);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*res;
-	int		len;
-	long	nb;
+	size_t		i;
+	long int	an;
+	char		*output;
 
-	len = intlen(n);
-	nb = n;
-	if (nb == 0)
-		return (ft_strdup("0"));
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if (!res)
-		return (0);
-	res[len--] = '\0';
-	if (!nb)
-		res[len] = '\0';
-	if (nb < 0)
+	an = n;
+	i = (n <= 0);
+	while (n != 0 && ++i > 0)
+		n = n / 10;
+	output = malloc(sizeof(char) * (i + 1));
+	if (output == NULL)
+		return (NULL);
+	if (an < 0)
+		output[0] = '-';
+	if (an < 0)
+		an *= -1;
+	output[i--] = '\0';
+	if (an == 0)
+		output[0] = 48;
+	while (an)
 	{
-		res[0] = '-';
-		nb = nb * -1;
+		output[i--] = (an % 10) + '0';
+		an /= 10;
 	}
-	while (nb != 0)
-	{
-		res[len--] = (nb % 10) + '0';
-		nb = nb / 10;
-	}
-	return (res);
+	return (output);
 }
-/*
-first function
-	- if nb < 0, allocate one space for it
-*/

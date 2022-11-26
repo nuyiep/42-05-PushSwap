@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 12:47:04 by plau              #+#    #+#             */
-/*   Updated: 2022/07/08 13:09:13 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 19:26:25 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 
 char	*ft_strdup(const char *src)
 {
-	int		i;
-	char	*dest;
+	char	*copy;
+	int		counter;
+	int		index;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dest = (char *) malloc (i + 1 * sizeof(char));
-	if (!dest)
+	if (!src)
 		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	counter = 0;
+	while (src[counter] != '\0')
+		counter++;
+	copy = malloc(sizeof(char) * (counter + 1));
+	if (copy == NULL)
+		return (0);
+	index = -1;
+	while (src[++index] != '\0')
+		copy[index] = src[index];
+	copy[index] = '\0';
+	return (copy);
 }
-/*
-count + 1 is to add \0
-*/

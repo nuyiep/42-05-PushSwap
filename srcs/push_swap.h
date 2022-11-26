@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 15:57:40 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 18:55:21 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/srcs/libft.h"
+# include <stdio.h>
 
 typedef struct s_ps
 {

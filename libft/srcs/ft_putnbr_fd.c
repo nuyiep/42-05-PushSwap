@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 10:50:33 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 11:05:13 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 16:20:20 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,19 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{
-		write(fd, "-", 1);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
+		write(fd, "-2147483648", 11);
+		return ;
 	}
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
-		ft_putnbr_fd(-n, fd);
+		n *= -1;
 	}
-	else if (n >= 10)
+	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 	else
-		ft_putchar_fd(n % 10 + '0', fd);
+		write(fd, &"0123456789"[n], 1);
 }
-/*
-recursion
-*/

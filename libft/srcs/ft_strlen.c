@@ -5,28 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 16:43:31 by plau              #+#    #+#             */
-/*   Updated: 2022/07/06 10:20:27 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 11:11:50 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t	length;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (!str)
+		return (0);
+	length = 0;
+	while (*str++)
+		length++;
+	return (length);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-	char *p = "Harry";
-	printf("%zu\n", ft_strlen(p));
-} 
-// <string.h>
-*/

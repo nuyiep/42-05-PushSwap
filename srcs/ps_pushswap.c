@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 16:58:01 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 18:24:33 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ void	init_ps(t_ps *ps)
 int	main(int ac, char **av)
 {
 	t_ps	ps;
-	int		largest;
-	int		smallest;
 
-	largest = 0;
-	smallest = 0;
 	init_ps(&ps);
 	if (error_checking(ac, av))
 		return (printf("Error\n"));

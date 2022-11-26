@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 14:36:47 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 20:24:08 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 18:30:18 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*temp;
 
-	if (!lst)
+	if (!lst || !*lst || !del)
 		return ;
-	while (*lst)
+	while (lst != NULL && *lst != NULL)
 	{
-		tmp = (*lst)->next;
-		(*del)((*lst)->content);
-		free(*lst);
-		*lst = tmp;
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
 }

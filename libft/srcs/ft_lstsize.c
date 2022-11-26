@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 09:34:52 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 20:38:44 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 17:43:38 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		counter;
 
-	if (!lst)
-		return (0);
-	i = 0;
-	while (lst)
+	counter = 0;
+	while (lst != NULL)
 	{
+		counter++;
 		lst = lst->next;
-		i++;
 	}
-	return (i);
+	return (counter);
 }

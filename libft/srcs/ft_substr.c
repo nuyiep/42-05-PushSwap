@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 13:52:56 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 18:02:02 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 10:34:18 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr_ptr;
+	size_t	i;
+	size_t	j;
+	char	*output;
 
+	i = 0;
+	j = 0;
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	substr_ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (!substr_ptr)
+	if (start >= ft_strlen(s))
+		output = malloc(1);
+	else if (len >= ft_strlen(s) - start)
+		output = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		output = malloc(sizeof(char) * (len + 1));
+	if (output == NULL)
 		return (NULL);
-	ft_memcpy(substr_ptr, s + start, len);
-	substr_ptr[len] = '\0';
-	return (substr_ptr);
+	while (i < start)
+		i++;
+	while (j < len && i < ft_strlen(s))
+		output[j++] = s[i++];
+	output[j] = '\0';
+	return (output);
 }
-/*
-return ft_strdup to return empty string. 
-*/

@@ -5,111 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 19:31:27 by plau              #+#    #+#             */
-/*   Updated: 2022/07/19 17:59:18 by plau             ###   ########.fr       */
+/*   Created: 2022/07/07 11:22:30 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* %c- putchar is a built-in function in C 
-	alternatively, write(1, &ch, 1), next line return (1)
-*/
-int	ft_putchar(char ch)
+static void	print_with_format(
+	char format, va_list *args, t_flags *flags, int *wc)
 {
-	return (write(1, &ch, 1));
-}
-
-/* %s - puts is a built-in function in C 
-	return how many digits in the int
-*/
-int	ft_puts(const char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
-}
-
-/* %% */
-int	print_percent(void)
-{
-	write(1, "%", 1);
-	return (1);
-}
-
-int	ft_formats(va_list ap, const char format)
-{
-	int	output;
-
-	output = 0;
 	if (format == 'c')
-		output += ft_putchar(va_arg(ap, int));
+		print_cf(va_arg(*args, int), flags, wc);
 	else if (format == 's')
-		output += ft_puts(va_arg(ap, char *));
+		print_sf(va_arg(*args, char *), flags, wc);
 	else if (format == 'p')
-		output += ft_print_n_returnptr(va_arg(ap, uintptr_t));
+		print_pf(va_arg(*args, unsigned long), flags, wc);
 	else if (format == 'd' || format == 'i')
-		output += print_integer_base10(va_arg(ap, int));
+		print_nf(va_arg(*args, int), flags, wc);
 	else if (format == 'u')
-		output += ft_print_unsigned(va_arg(ap, unsigned int));
+		print_unf(va_arg(*args, unsigned int), flags, wc);
 	else if (format == 'x')
-		output += ft_hexa_lower(va_arg(ap, unsigned int));
+		print_hf(va_arg(*args, int), "0123456789abcdef", flags, wc);
 	else if (format == 'X')
-		output += ft_hexa_upper(va_arg(ap, unsigned int));
-	else if (format == '%')
-		output += print_percent();
-	return (output);
+		print_hf(va_arg(*args, int), "0123456789ABCDEF", flags, wc);
+	else if (format == '%' && ++(*wc))
+		ft_putchar_fd('%', 1);
+}
+
+static void	get_format(char format, va_list *args, t_flags *flags, int *wc)
+{
+	if (flags->zero == 1)
+		flags->d = '0';
+	print_with_format(format, args, flags, wc);
 }
 
 int	ft_printf(const char *str, ...)
 {
+	va_list	args;
+	int		wc;
 	int		i;
-	va_list	ap;
-	int		output;
+	t_flags	*flags;
 
-	i = 0;
-	output = 0;
-	va_start(ap, str);
-	while (str[i])
+	va_start(args, str);
+	wc = 0;
+	i = -1;
+	flags = malloc(sizeof(t_flags));
+	if (flags == NULL)
+		return (0);
+	while (++i < (int)ft_strlen(str))
 	{
-		if (str[i] == '%')
+		default_flag(flags);
+		if (str[i] == '%' && ++i)
 		{
-			output = output + ft_formats(ap, str[i + 1]);
-			i++;
+			get_flags(str, &i, flags);
+			get_format(str[i], &args, flags, &wc);
 		}
 		else
-			output = output + ft_putchar(str[i]);
-		i++;
+			print_cf(str[i], flags, &wc);
 	}
-	va_end(ap);
-	return (output);
+	va_end(args);
+	free(flags);
+	return (wc);
 }
-/*
-easy version is to loop through the str first. 
-
-int	ft_printf(const char *str)
-{
-	int i;
-	
-	i = -1;
-	while (str[i++])
-		write(1, &str[i], 1);
-	return (i);
-}
-
-int main(void)
-{
-	ft_printf("HELLO");
-}
-*/

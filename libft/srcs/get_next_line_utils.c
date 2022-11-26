@@ -3,53 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
+/*   By: schuah <schuah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 17:04:39 by plau              #+#    #+#             */
-/*   Updated: 2022/08/14 14:59:16 by plau             ###   ########.fr       */
+/*   Created: 2022/07/12 20:34:26 by schuah            #+#    #+#             */
+/*   Updated: 2022/07/18 11:13:31 by schuah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "get_next_line.h"
 
-unsigned int	ft_strlen(char *str)
+char	*ft_strcomb(char *dst, char *src)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-/*
-char	*ft_strjoin(char *dst, char *src)
-if stash[0] == '\0', will skip the first while loop
-	new[0] == tmp[0]
-*/
-char	*ft_strjoin(char *stash, char *tmp)
-{
-	char	*new;
 	int		i;
 	int		j;
+	char	*output;
 
-	if (!stash)
+	if (dst == NULL)
 	{
-		stash = malloc(sizeof(char) * 1);
-		if (!stash || !tmp)
+		dst = malloc(sizeof(char) * 1);
+		if (dst == NULL || src == NULL)
 			return (NULL);
-		stash[0] = '\0';
+		dst[0] = '\0';
 	}
-	new = malloc(sizeof(char) * (ft_strlen(stash) + ft_strlen(tmp) + 1));
-	if (!new)
+	output = malloc(sizeof(char)
+			* ((int)ft_strlen(dst) + (int)ft_strlen(src) + 1));
+	if (output == NULL)
 		return (NULL);
 	i = -1;
-	while (stash[++i] != '\0')
-		new[i] = stash[i];
-	j = -1;
-	while (tmp[++j] != '\0')
-		new[i + j] = tmp[j];
-	new[i + j] = '\0';
-	free(stash);
-	return (new);
+	if (dst)
+		while (dst[++i] != '\0')
+			output[i] = dst[i];
+	j = 0;
+	while (src[j] != '\0')
+		output[i++] = src[j++];
+	output[(int)ft_strlen(dst) + (int)ft_strlen(src)] = '\0';
+	free(dst);
+	return (output);
+}
+
+int	checkend(char c)
+{
+	return (c != '\0' && c != '\n');
 }

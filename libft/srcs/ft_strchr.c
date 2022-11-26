@@ -5,34 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 18:35:30 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 17:14:48 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 16:04:19 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == '\0')
-		return ((char *)s);
+	int	i;
+
+	i = -1;
+	if (!str)
+		return (NULL);
+	while (str[++i] != '\0')
+		if (str[i] == (char)c)
+			return ((char *)(str + i));
+	if (str[i] == (char)c)
+		return ((char *)(str + i));
 	return (NULL);
 }
-/*
-int main()
-{
-	char str[] = "http://www.tutorialspoint.com";
-	char ch = '.';
-	char *ret;
-
-	ret = ft_strchr(str, '.');
-	printf("String after |%c| is - |%s|\n", ch, ret);
-	return (0);
-}
-*/

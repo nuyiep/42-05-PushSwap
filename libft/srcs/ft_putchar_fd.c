@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 09:53:45 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 18:29:28 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 16:12:23 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, sizeof(char));
+	write(fd, &c, 1);
 }
-/*
-#include <stdio.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int main(void)
-{
-	int file_fd;
-
-	file_fd = open("./TESTINGFILE", O_WRONLY);
-	write(file_fd, "Hello World", 10);
-}
-*/

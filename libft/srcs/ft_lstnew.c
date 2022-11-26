@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 16:23:24 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 20:38:38 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 17:27:44 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(void	*content)
 {
-	t_list	*ret;
+	t_list	*new;
 
-	ret = malloc(sizeof(t_list));
-	if (!ret)
+	new = malloc(sizeof(t_list));
+	if (new == NULL)
 		return (NULL);
-	ret->content = content;
-	ret->next = NULL;
-	return (ret);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 12:40:40 by plau              #+#    #+#             */
-/*   Updated: 2022/08/14 13:33:08 by plau             ###   ########.fr       */
+/*   Created: 2022/11/26 18:09:05 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:56:14 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef	CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include <unistd.h> //read, close
-# include <stdlib.h> //malloc, free
-# include <fcntl.h>  //open (testing)
-# include <stdio.h> //printf (testing)
-
-//macros
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
-# define FILE_MAX 1024
-
-char			*get_next_line(int fd);
-unsigned int	ft_strlen(char *str);
-char			*ft_strjoin(char *stash, char *tmp);
+# include "../libft/srcs/libft.h"
+# include <stdio.h>
 
 #endif

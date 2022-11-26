@@ -3,177 +3,114 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
+/*   By: schuah <schuah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 17:06:30 by plau              #+#    #+#             */
-/*   Updated: 2022/08/14 16:40:23 by plau             ###   ########.fr       */
+/*   Created: 2022/07/12 17:08:24 by schuah            #+#    #+#             */
+/*   Updated: 2022/07/29 21:15:31 by schuah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "get_next_line.h"
 
-int	check_new_line(char *stash)
+static int	check_is_nl(char *str)
 {
 	int	i;
 
-	i = 0;
-	if (!stash)
+	if (str == NULL)
 		return (0);
-	while (stash[i] != '\0')
-	{
-		if (stash[i] == '\n')
+	i = -1;
+	while (str[++i] != '\0')
+		if (str[i] == '\n')
 			return (1);
-		i++;
-	}
 	return (0);
 }
-/*
-save the extra character / reset the static variable
-*/
 
-char	*remove_after_read(char *stash)
+static char	*savepoint(char *input)
 {
 	int		i;
 	int		j;
 	char	*output;
 
 	i = 0;
-	while (stash[i] != '\n' && stash[i] != '\0')
+	while (checkend(input[i]))
 		i++;
-	if (stash[i] == '\0')
+	if (input[i] == '\0')
 	{
-		free(stash);
+		free(input);
 		return (NULL);
 	}
-	output = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
-	if (!output)
+	output = malloc(sizeof(char) * ((int)ft_strlen(input) - i++ + 1));
+	if (output == NULL)
 		return (NULL);
 	j = 0;
-	while (stash[++i])
-	{
-		output[j] = stash[i];
-		j++;
-	}
+	while (input[i] != '\0')
+		output[j++] = input[i++];
 	output[j] = '\0';
-	free(stash);
+	free(input);
 	return (output);
 }
 
-/*
-while loop- if either #1 or #2 is satisfied, loop with stop
-	1.	reach \n 
-	2.	reach \0 - EOF
-output is HelloWorld\n\0
-*/
-
-char	*get_output(char	*stash)
+static char	*get_read(char *input)
 {
-	char	*output;
 	int		i;
-	int		j;
+	char	*output;
 
-	if (stash[0] == '\0')
+	if (input[0] == '\0')
 		return (NULL);
 	i = 0;
-	while (stash[i] != '\0' && stash[i] != '\n')
+	while (checkend(input[i]))
 		i++;
-	output = malloc(sizeof(char) * (i + 1 + (stash[i] == '\n')));
-	j = 0;
-	while (stash[j] != '\0' && stash[j] != '\n')
+	output = malloc(sizeof(char) * (i + 1 + (input[i] == '\n')));
+	if (output == NULL)
+		return (NULL);
+	i = -1;
+	while (checkend(input[++i]))
+		output[i] = input[i];
+	if (input[i] == '\n')
 	{
-		output[j] = stash[j];
-		j++;
+		output[i] = input[i];
+		i++;
 	}
-	if (stash[j] == '\n')
-	{
-		output[j] = stash[j];
-		j++;
-	}
-	output[j] = '\0';
+	output[i] = '\0';
 	return (output);
 }
 
-/*
-man 2 read
-- read(int fd, void *buf, size_t nbyte)
-	read into the buffer pointed to by buf
-
-return value (i)
-	- if successful, return the number of bytes actually read.
-	- 0: reach the end of file
-	- -1: file does not exist or no permission to read
-
-while loop
-	1.	check_new_line(stash) != 1
-		if stash[i] is a \n, stop the loop and return
-		E.g. 
-		Buffer_size = 7 using the example below
-		during the second loop, 7+7, there is a \n
-		
-	2.	i != 0
-		zero means reach the EOF, nothing left to read
-		
-*/
-char	*get_new_line(int fd, char *stash)
+static char	*get_next_nl(int fd, char *output)
 {
-	char	*tmp;
+	char	*buf;
 	int		i;
 
-	i = 88888888;
-	tmp = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!tmp)
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (buf == NULL)
 		return (NULL);
-	while (check_new_line(stash) != 1 && i != 0)
+	i = 1;
+	while (check_is_nl(output) == 0 && i != 0)
 	{
-		i = read(fd, tmp, BUFFER_SIZE);
+		i = read(fd, buf, BUFFER_SIZE);
 		if (i == -1)
 		{
-			free(tmp);
+			free(buf);
 			return (NULL);
 		}
-		tmp[i] = '\0';
-		stash = ft_strjoin(stash, tmp);
+		buf[i] = '\0';
+		output = ft_strcomb(output, buf);
 	}
-	free(tmp);
-	return (stash);
-}
-
-/*
-static variable
-	- 	data persists until the end of the program,
-		whether or not the function in which it was declared ends
-	-	in this case, necessary to store the extra characters, 
-		read after a \n.
-		so that when we call get_next_line again to get the next 
-		line, those characters are not lost.
-*/
-char	*get_next_line(int fd)
-{
-	static char	*stash;
-	char		*output;
-
-	if (fd < 3 || fd > FILE_MAX || BUFFER_SIZE < 1)
-		return (NULL);
-	stash = get_new_line(fd, stash);
-	output = get_output(stash);
-	stash = remove_after_read(stash);
+	free(buf);
 	return (output);
 }
-/*
-Hello_World\n
-Text12346789
 
-Stash is null initially
-Buffer_size = 7
-i = 7
-Stash: Hello_W (7)
-Stash: 	Hello_W (7)
-		orld\nTe (7) (2nd loop- read 7 bytes again)
-output:	Hello_World\n\0
+char	*get_next_line(int fd)
+{
+	char			*output;
+	static char		*history;
 
-after remove_after_read
-output: Te\0 
-output[3]
-
-stash is now Te\0
-*/
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1024)
+		return (0);
+	history = get_next_nl(fd, history);
+	if (history == NULL)
+		return (NULL);
+	output = get_read(history);
+	history = savepoint(history);
+	return (output);
+}

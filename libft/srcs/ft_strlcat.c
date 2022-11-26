@@ -5,48 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 13:12:02 by plau              #+#    #+#             */
-/*   Updated: 2022/07/07 15:11:24 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 15:42:56 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	d;
-	size_t	s;
+	size_t	dest_length;
+	size_t	index;
 
-	d = 0;
-	s = 0;
-	while (dst[d] && d < size)
-		d++;
-	while ((src[s]) && ((d + s + 1) < size))
-	{
-		dst[d + s] = src[s];
-		s++;
-	}
-	if (d != size)
-		dst[d + s] = '\0';
-	return (d + ft_strlen(src));
+	if (!dest || !src)
+		return (0);
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	dest_length = ft_strlen(dest);
+	index = 0;
+	while ((dest_length < size - 1) && src[index] != '\0')
+		dest[dest_length++] = src[index++];
+	dest[dest_length] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[index]));
 }
-/*
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t	j;
-	size_t	k;
-
-	j = 0;
-	k = 0;
-	while (dst[j] && j < size) 
-		j++;
-	while ((src[k]) && ((j + k + 1) < size)) 
-	{
-		dst[j + k] = src[k];
-		k++;
-	}
-	if (j != size)
-		dst[j + k] = '\0';
-	return (j + ft_strlen(src));
-}
-*/

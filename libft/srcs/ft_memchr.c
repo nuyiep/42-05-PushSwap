@@ -5,24 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 16:22:42 by plau              #+#    #+#             */
-/*   Updated: 2022/07/07 16:24:47 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 16:32:36 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned char	*ptrs;
+	size_t	i;
 
-	ptrs = (unsigned char *)s;
-	while (n > 0)
-	{
-		if (*ptrs == (unsigned char)c)
-			return ((void *)ptrs);
-		ptrs++;
-		n--;
-	}
-	return (0);
+	i = -1;
+	while (++i < n)
+		if (*(unsigned char *)(str + i) == (unsigned char)c)
+			return ((void *)(str + i));
+	return (NULL);
 }

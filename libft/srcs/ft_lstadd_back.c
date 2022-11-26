@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 18:52:35 by plau              #+#    #+#             */
-/*   Updated: 2022/07/21 16:27:16 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 18:00:23 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*list;
 
-	tmp = *lst;
-	if (*lst == NULL)
-	{
-		*lst = new;
+	if (!lst || !new)
 		return ;
-	}
-	while (tmp->next != NULL)
+	if (*lst != NULL)
 	{
-		tmp = tmp->next;
+		list = ft_lstlast(*lst);
+		list->next = new;
 	}
-	tmp->next = new;
-}
-/*
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	if (*lst == NULL)
-		*lst = new;
 	else
-		ft_lstlast(*lst)-> next = new;
+		*lst = new;
 }
-*/

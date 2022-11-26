@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 18:14:49 by plau              #+#    #+#             */
-/*   Updated: 2022/11/13 19:30:32 by plau             ###   ########.fr       */
+/*   Created: 2022/07/05 18:45:58 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
+	if (!lst || !f)
 		return ;
-	while (lst)
-	{	
+	while (lst != NULL)
+	{
 		(*f)(lst->content);
 		lst = lst->next;
 	}

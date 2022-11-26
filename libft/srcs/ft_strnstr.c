@@ -5,48 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 17:10:51 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 17:45:26 by plau             ###   ########.fr       */
+/*   Created: 2022/07/04 17:08:42 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (needle[0] == '\0')
-		return ((char *) haystack);
-	i = 0;
-	while (haystack[i] != '\0' && i < len)
+	i = -1;
+	if (!str || !to_find)
+		return (NULL);
+	if (to_find[0] == 0)
+		return ((char *)str);
+	while (str[++i] != '\0' && i < len)
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && (i + j) < len)
-		{
-			if (needle[j + 1] == '\0')
-			{
-				return ((char *)haystack + i);
-			}
+		while (str[i + j] && to_find[j]
+			&& i + j < len && str[i + j] == to_find[j])
 			j++;
-		}
-		i++;
+		if (!to_find[j])
+			return ((char *)(str + i));
 	}
-	return (0);
+	return (NULL);
 }
-/*
-haystack = abhcdehello 
-needle = hello 
-
-first while loop- loop through until you find the same j first index 
-second while loop- if j first index found in haystack, keep incrementing j
-					within the second while loop
-
-int main()
-{
-	char *haystack = "Helloworld";
-	char *needle = "world";
-	ft_strnstr(c)
-}
-*/
