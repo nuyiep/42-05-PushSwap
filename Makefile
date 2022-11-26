@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/26 19:33:41 by plau             ###   ########.fr        #
+#    Updated: 2022/11/26 22:35:41 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT		=	libft.a
 CC			=	gcc
 RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
-CFLAGS			+=	-fsanitize=address -g3
+# CFLAGS			+=	-fsanitize=address -g3
 SRCS_FILES	=	ps_helper \
 				ps_pushswap \
 				ps_get_data \
@@ -32,7 +32,11 @@ BONUS_FILES	=	checker_main_bonus \
 				checker_error_checking \
 				checker_helper \
 				checker_get_data \
-				checker_quicksort
+				checker_quicksort \
+				checker_read \
+				checker_operations1 \
+				checker_operations2 \
+				checker_operations3 
 SRCS		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRCS_FILES)))
 OBJS		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRCS_FILES)))
 BONUS_SRCS	=	$(addprefix $(BONUS_DIR), $(addsuffix .c, $(BONUS_FILES)))

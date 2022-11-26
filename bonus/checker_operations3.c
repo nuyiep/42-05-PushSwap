@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_main_bonus.c                               :+:      :+:    :+:   */
+/*   checker_operations3.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 18:22:21 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 22:42:51 by plau             ###   ########.fr       */
+/*   Created: 2022/11/26 21:31:55 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 21:32:13 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-/* Initialize the data in struct */
-void	init_ps(t_ps *ps)
+/* Take the first element at the top of a and put it at the top of b */
+void	pb(t_ps *ps, int print)
 {
-	ps->len_a = 0;
-	ps->len_b = 0;
-	ps->max = 0;
+	ft_swap(&ps->a[0], &ps->b[ps->len_b]);
+	ps->len_b++;
+	ra(ps, 0);
+	ps->len_a--;
+	rrb(ps, 0);
+	if (print)
+		ft_putstr_fd("pb\n", 1);
 }
 
-/* Start of the main function */
-int	main(int ac, char **av)
+/* RRA and RRB at the same time */
+void	rrr(t_ps *ps, int print)
 {
-	t_ps	ps;
-
-	init_ps(&ps);
-	if (error_checking(av))
-		return (printf("Error\n"));
-	get_data(&ps, av, 0);
-	read_command(&ps);
-	return (0);
-	(void)ac;
+	rra(ps, 0);
+	rrb(ps, 0);
+	if (print)
+		ft_putstr_fd("rrr\n", 1);
 }
