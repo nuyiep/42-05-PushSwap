@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:19:02 by plau              #+#    #+#             */
-/*   Updated: 2022/11/18 15:25:31 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 15:28:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ void	sort_three(t_ps *ps)
 	}
 }
 
+		// printf("smallest: %d\n", smallest);
+		// print_stack(ps);
+		// printf("%p\n%p\n", &ps->a[0], &ps->a[ps->len_a - 1]);
+		// sleep(1);
 void	sort_five(t_ps *ps)
 {
 	int	*sorted_stack;

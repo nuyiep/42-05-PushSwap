@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:24:43 by plau              #+#    #+#             */
-/*   Updated: 2022/11/25 20:39:31 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 15:08:26 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,17 @@ void	change_to_index(t_ps *ps)
 		}
 	}
 	free(sorted_stack);
+}
+
+void	free_ftsplit(char **split)
+{
+	int	k;
+
+	k = 0;
+	while (split[k] != NULL)
+	{
+		free(split[k]);
+		k++;
+	}	
+	free(split);
 }

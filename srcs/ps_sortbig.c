@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:51:13 by plau              #+#    #+#             */
-/*   Updated: 2022/11/25 21:50:05 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 13:18:15 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,26 @@ int	push_second_largest(t_ps *ps, int pushed_already)
 	return (0);
 }
 
+int	smart_rotate(t_ps *ps, int largest, int pushed_already, int position)
+{
+	while (ps->b[0] != largest)
+	{
+		pushed_already = push_second_largest(ps, pushed_already);
+		if (ps->b[0] == largest)
+			break ;
+		if (position > ps->len_b / 2)
+			rrb(ps, 1);
+		else if (position <= ps->len_b / 2)
+			rb(ps, 1);
+	}
+	return (pushed_already);
+}
+
 // 1. FIND BIGGEST NUMBER INDEX (get_pos)
 // 2. DECIDE WHETHER TO "RB" OR "RRB"
 // 3. PA AND LOOP UNTIL STACK B IS EMPTY
 void	ps_push_to_a(t_ps *ps)
 {
-	int	position;
 	int	largest;
 	int	pushed_already;
 
@@ -94,7 +108,6 @@ void	ps_push_to_a(t_ps *ps)
 	{
 		if (pushed_already == 0)
 			largest = ps->len_b - 1;
-		position = get_pos(ps, largest, 'B');
 		if (ps->b[0] == largest)
 		{
 			pa(ps, 1);
@@ -108,29 +121,7 @@ void	ps_push_to_a(t_ps *ps)
 			pushed_already = 0;
 		}
 		else
-		{
-			while (ps->b[0] != largest)
-			{
-				pushed_already = push_second_largest(ps, pushed_already);
-				if (ps->b[0] == largest)
-					break ;
-				if (position > ps->len_b / 2)
-					rrb(ps, 1);
-				else if (position <= ps->len_b / 2)
-					rb(ps, 1);
-			}
-		}
+			pushed_already = smart_rotate(ps, largest,
+					pushed_already, get_pos(ps, largest, 'B'));
 	}
-	return ;
-}
-
-/* Main function */
-void	ps_sorthundred(t_ps *ps)
-{
-	int	chunk_size;
-
-	chunk_size = ps->len_a / 12 + 30;
-	change_to_index(ps);
-	ps_push_to_b(ps, chunk_size);
-	ps_push_to_a(ps);
 }

@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/25 21:11:22 by plau             ###   ########.fr        #
+#    Updated: 2022/11/26 16:07:41 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT		=	libft.a
 CC			=	gcc
 RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
-CFLAGS			+=	-fsanitize=address -g3
+# CFLAGS			+=	-fsanitize=address -g3
 SRCS_FILES	=	ps_helper \
 				ps_pushswap \
 				ps_get_data \
@@ -26,7 +26,9 @@ SRCS_FILES	=	ps_helper \
 				ps_operations2 \
 				ps_operations3 \
 				ps_quicksort	\
-				ps_sortbig		
+				ps_sortbig	\
+				ps_sortbig2	\
+				ps_error_checks2
 BONUS_FILES	=	checker_main_bonus \
 				checker_getters_bonus \
 				checker_getters2_bonus \
