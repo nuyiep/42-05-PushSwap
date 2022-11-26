@@ -6,13 +6,11 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 16:11:28 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:45:47 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* Error checking - display "Error\n on std error"*/
 
 /* Arguments that are not integers - error return 1 */
 int	check_not_integer(char **av)
@@ -64,6 +62,7 @@ char	*numbers_into_string(char **av)
 	return (output);
 }
 
+/* If duplicate, return 1 */
 int	check_duplicate(char **split, int j, int k, char *str)
 {
 	while (split[j] != NULL)

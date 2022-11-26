@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:19:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/16 21:53:04 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:56:29 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ra(t_ps *ps, int print)
 		ft_putstr_fd("ra\n", 1);
 }
 
+/* Shift up all elements of stack B by 1 */
+/* The first element becomes the last one */
 void	rb(t_ps *ps, int print)
 {
 	int	temp;
@@ -52,6 +54,7 @@ void	rb(t_ps *ps, int print)
 		ft_putstr_fd("rb\n", 1);
 }
 
+/* RA and RB at the same time */
 void	rr(t_ps *ps, int print)
 {
 	ra(ps, 0);
@@ -60,6 +63,8 @@ void	rr(t_ps *ps, int print)
 		ft_putstr_fd("rr\n", 1);
 }
 
+/* Shift down all elements of stack A by 1 */
+/* The last element becomes the first one */
 void	rra(t_ps *ps, int print)
 {
 	int	temp;
@@ -79,6 +84,8 @@ void	rra(t_ps *ps, int print)
 		ft_putstr_fd("rra\n", 1);
 }
 
+/* Shift down all elements of stack B by 1 */
+/* The last element becomes the first one */
 void	rrb(t_ps *ps, int print)
 {
 	int	temp;

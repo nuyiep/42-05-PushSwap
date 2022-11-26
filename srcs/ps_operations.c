@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:54 by plau              #+#    #+#             */
-/*   Updated: 2022/11/18 11:40:10 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:54:32 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Swap the first 2 elements at the top of stack A */
 void	sa(t_ps *ps, int print)
 {
 	if (ps->len_a < 2)
@@ -21,6 +22,7 @@ void	sa(t_ps *ps, int print)
 		ft_putstr_fd("sa\n", 1);
 }
 
+/* Swap the first 2 elements at the top of stack B */
 void	sb(t_ps *ps, int print)
 {
 	if (ps->len_b < 2)
@@ -30,6 +32,7 @@ void	sb(t_ps *ps, int print)
 		ft_putstr_fd("sb\n", 1);
 }
 
+/* SA and SB at the same time */
 void	ss(t_ps *ps, int print)
 {
 	sa(ps, 0);

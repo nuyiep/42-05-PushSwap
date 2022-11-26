@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:50:19 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 14:40:06 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:48:23 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Allocate memory for stack A and stack B */
 void	malloc_stack(t_ps *ps, char **av, int init)
 {
 	if (init == 0)
@@ -24,7 +25,6 @@ void	malloc_stack(t_ps *ps, char **av, int init)
 	}
 }
 
-/* Allocate memory for stack A and stack B */
 /* Fill numbers from av to stack A */
 void	get_data(t_ps *ps, char **av, int init)
 {

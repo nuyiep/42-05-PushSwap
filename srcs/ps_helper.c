@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:24:43 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 15:08:26 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:53:20 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* To print stack */
 void	print_stack(t_ps *ps)
 {
 	int	index;
@@ -33,7 +34,7 @@ void	print_stack(t_ps *ps)
 	printf("\n");
 }
 
-/* Is sorted - return 1 */
+/* If is sorted - return 1 */
 int	is_sorted(t_ps *ps)
 {
 	int	i;
@@ -48,6 +49,7 @@ int	is_sorted(t_ps *ps)
 	return (1);
 }
 
+/* Change numbers to index */
 void	change_to_index(t_ps *ps)
 {
 	int	*sorted_stack;
@@ -75,6 +77,7 @@ void	change_to_index(t_ps *ps)
 	free(sorted_stack);
 }
 
+/* To handle memory leaks */
 void	free_ftsplit(char **split)
 {
 	int	k;

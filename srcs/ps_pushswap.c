@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:15:50 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 16:11:57 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:58:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Initialize the data in struct */
 void	init_ps(t_ps *ps)
 {
 	ps->len_a = 0;
@@ -19,6 +20,7 @@ void	init_ps(t_ps *ps)
 	ps->max = 0;
 }
 
+/* Start of the main function */
 int	main(int ac, char **av)
 {
 	t_ps	ps;

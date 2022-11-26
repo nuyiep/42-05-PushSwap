@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:49:46 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 14:29:48 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:56:52 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	pb(t_ps *ps, int print)
 		ft_putstr_fd("pb\n", 1);
 }
 
+/* RRA and RRB at the same time */
 void	rrr(t_ps *ps, int print)
 {
 	rra(ps, 0);

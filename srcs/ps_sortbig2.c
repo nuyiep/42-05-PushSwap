@@ -6,13 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 13:14:13 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 13:16:11 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 17:50:08 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Main function */
+/* Main function for sorting more than 100 */
 void	ps_sorthundred(t_ps *ps)
 {
 	int	chunk_size;
