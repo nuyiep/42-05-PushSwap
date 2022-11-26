@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/26 18:53:52 by plau             ###   ########.fr        #
+#    Updated: 2022/11/26 19:33:41 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,12 @@ SRCS_FILES	=	ps_helper \
 				ps_operations3 \
 				ps_quicksort	\
 				ps_sortbig	\
-				ps_sortbig2	\
-				ps_error_checks2
-BONUS_FILES	=	checker_main_bonus
+				ps_sortbig2
+BONUS_FILES	=	checker_main_bonus \
+				checker_error_checking \
+				checker_helper \
+				checker_get_data \
+				checker_quicksort
 SRCS		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRCS_FILES)))
 OBJS		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRCS_FILES)))
 BONUS_SRCS	=	$(addprefix $(BONUS_DIR), $(addsuffix .c, $(BONUS_FILES)))

@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:19:02 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 15:28:01 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 19:27:40 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	sort_five(t_ps *ps)
 			ra(ps, 1);
 	}
 	sort_three(ps);
-	pa(ps, 1);
-	pa(ps, 1);
+	while (ps->len_b)
+		pa(ps, 1);
 	free(sorted_stack);
 }
 

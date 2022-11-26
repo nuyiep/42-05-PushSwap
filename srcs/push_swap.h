@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:15:38 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 18:55:21 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/26 19:33:31 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	quicksort_recursion(int array[], int low, int high);
 void	quicksort(int array[], int length);
 
 /* Error checking */
-int		error_checking(int ac, char **av);
+int		error_checking(char **av);
 
 /* Get data */
 void	get_data(t_ps *ps, char **av, int init);
@@ -45,7 +45,6 @@ void	ps_sorthundred(t_ps *ps);
 void	ps_push_to_b(t_ps *ps, int chunk_size);
 void	ps_push_to_a(t_ps *ps);
 void	change_to_index(t_ps *ps);
-int		check_arg_bigger_than_int(char *str);
 
 /* Operators */
 void	sa(t_ps *ps, int print);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_error_checks.c                                  :+:      :+:    :+:   */
+/*   checker_error_checking.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 18:30:27 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 19:33:55 by plau             ###   ########.fr       */
+/*   Created: 2022/11/26 19:06:56 by plau              #+#    #+#             */
+/*   Updated: 2022/11/26 19:33:57 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 /* Arguments that are not integers - error return 1 */
 int	check_not_integer(char **av)
