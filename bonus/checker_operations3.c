@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:31:55 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 21:32:13 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/28 12:47:55 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /* Take the first element at the top of a and put it at the top of b */
 void	pb(t_ps *ps, int print)
 {
+	if (ps->len_a == 0)
+		return ;
 	ft_swap(&ps->a[0], &ps->b[ps->len_b]);
 	ps->len_b++;
 	ra(ps, 0);

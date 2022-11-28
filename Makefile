@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:41:04 by plau              #+#    #+#              #
-#    Updated: 2022/11/26 22:35:41 by plau             ###   ########.fr        #
+#    Updated: 2022/11/28 12:42:59 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT		=	libft.a
 CC			=	gcc
 RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
-# CFLAGS			+=	-fsanitize=address -g3
+CFLAGS			+=	-fsanitize=address -g3
 SRCS_FILES	=	ps_helper \
 				ps_pushswap \
 				ps_get_data \

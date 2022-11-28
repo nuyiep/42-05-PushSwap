@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:31:18 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 21:31:43 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/28 12:55:54 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ra(t_ps *ps, int print)
 	int	i;
 
 	i = 1;
+	if (ps->len_a < 2)
+		return ;
 	temp = ps->a[0];
 	if (ps->len_a < 2)
 		return ;
@@ -40,10 +42,10 @@ void	rb(t_ps *ps, int print)
 	int	temp;
 	int	i;
 
+	if (ps->len_b < 3)
+		return ;
 	i = 1;
 	temp = ps->b[0];
-	if (ps->len_b < 2)
-		return ;
 	while (ps->len_b > i)
 	{
 		ps->b[i - 1] = ps->b[i];
@@ -70,6 +72,8 @@ void	rra(t_ps *ps, int print)
 	int	temp;
 	int	i;
 
+	if (ps->len_a < 2)
+		return ;
 	i = ps->len_a - 2;
 	temp = ps->a[ps->len_a - 1];
 	if (ps->len_a < 2)
@@ -91,6 +95,8 @@ void	rrb(t_ps *ps, int print)
 	int	temp;
 	int	i;
 
+	if (ps->len_b < 2)
+		return ;
 	i = ps->len_b - 2;
 	temp = ps->b[ps->len_b - 1];
 	if (ps->len_b < 2)
