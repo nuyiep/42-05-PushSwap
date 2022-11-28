@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:51:13 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 17:49:03 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/28 14:46:50 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	get_pos(t_ps *ps, int number, char c)
 	return (index);
 }
 
+/* To push from stack A to stack B */
 /* Push everything smaller than chunk into stack B */
 void	ps_push_to_b(t_ps *ps, int chunk_size)
 {
@@ -66,6 +67,7 @@ void	ps_push_to_b(t_ps *ps, int chunk_size)
 	}
 }
 
+/* To push from stack B to stack A */
 // IF TOP IS SECOND LARGEST, RETURN 1
 // ELSE RETURN 0
 int	push_second_largest(t_ps *ps, int pushed_already)
@@ -80,6 +82,7 @@ int	push_second_largest(t_ps *ps, int pushed_already)
 	return (0);
 }
 
+/* To push from stack B to stack A */
 int	smart_rotate(t_ps *ps, int largest, int pushed_already, int position)
 {
 	while (ps->b[0] != largest)
