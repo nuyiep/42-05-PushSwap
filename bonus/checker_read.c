@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:22:11 by plau              #+#    #+#             */
-/*   Updated: 2022/11/28 12:45:34 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/28 13:41:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	comparing(t_ps *ps, char *str)
 		pb(ps, 0);
 	else if (ft_strcmp(str, "rrr\n") == 0)
 		rrr(ps, 0);
+	else
+	{
+		ft_printf("Error\n");
+		exit (1);
+	}
 }
 
 int	read_command(t_ps *ps)

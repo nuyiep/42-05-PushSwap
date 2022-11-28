@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 18:22:21 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 22:42:51 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/28 13:39:50 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int	main(int ac, char **av)
 	t_ps	ps;
 
 	init_ps(&ps);
+	if (ac < 2)
+		return (0);
 	if (error_checking(av))
-		return (printf("Error\n"));
+		return (ft_printf("Error\n"));
 	get_data(&ps, av, 0);
 	read_command(&ps);
 	return (0);
-	(void)ac;
 }
